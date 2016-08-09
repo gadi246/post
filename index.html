@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>mini-app</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="container">
+  <form action="">
+    <label for="user-name">Name</label>
+    <input type="text" name="name" id="user-name">
+    <button type="submit">Send</button>
+  </form>
+</div>
+<div class="user-data"></div>
+<script src="ejs_production.js"></script>
+<script src="main.js"></script>
+<script id="template" type="text/x-ejs-template">
+<h1>Hello, <%=name%></h1>
+<p>Last entry: <%=lastEntry%></p>
+<p>Your cash: <%=cash%> $</p>
+  <% if(cash < 0){ %>
+  <strong>WARNING:OVERDRAFT!</strong>
+  <%}%>
+
+</script>
+</body>
+</html>
